@@ -14,13 +14,13 @@ export default class extends React.Component {
         <Head>
             <title>Discogs</title>
             <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            <link rel="stylesheet" href="https://unpkg.com/purecss@0.6.1/build/pure-min.css" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" />
         </Head>
-        <div className="pure-g">
-            <div className="pure-u-1-3"></div>
-            <div className="pure-u-1-3">
+        <div className="row">
+          <div className="col s12 m4 l2"></div>
+            <div className="col s12 m4 l8">
               <h1>Discogs</h1>
-              <table className="pure-table">
+              <table className="striped">
                 <thead>
                   <tr>
                     <th>id</th>
@@ -33,22 +33,22 @@ export default class extends React.Component {
                 </thead>
                 <tbody>
                 {this.props.data.releases.map((releases, i) => {
-                  const oddOrNot = i % 2 == 1 ? "pure-table-odd" : "";
+                  const oddOrNot = i % 2 == 1 ? "striped" : "";
                   return (
-                      <tr key={i} className={oddOrNot}>
-                        <td>{releases.id}</td>
-                        <td>{releases.title}</td>
-                        <td>{releases.artist}</td>
-                        <td>{releases.label}</td>
-                        <td>{releases.year}</td>
-                        <td>{releases.format}</td>
-                      </tr>
-                    );
+                    <tr key={i} className={oddOrNot}>
+                      <td>{releases.id}</td>
+                      <td>{releases.title}</td>
+                      <td>{releases.artist}</td>
+                      <td>{releases.label}</td>
+                      <td>{releases.year}</td>
+                      <td>{releases.format}</td>
+                    </tr>
+                  );
                 })}
                 </tbody>
               </table>
             </div>
-            <div className="pure-u-1-3"></div>
+          <div className="col s12 m4 l2"></div>
         </div>
       </div>
     );
